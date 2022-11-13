@@ -1,0 +1,36 @@
+// Generated for: spectre
+// Generated on: Oct 31 13:18:38 2022
+// Design library name: Second
+// Design cell name: CommonDrain
+// Design view name: schematic
+simulator lang=spectre
+global 0 vdd!
+parameters vg=600m vin=250m
+include "/ECEnet/Apps1/linux/cad12/tools/PDKs/gpdk180_v3.3/models/spectre/gpdk.scs" section=stat
+
+// Library name: Second
+// Cell name: CommonDrain
+// View name: schematic
+V0 (In 0) vsource dc=vg mag=1 type=sine ampl=vin freq=100K
+PM1 (Out net3 vdd! vdd!) pmos1 w=(1.25u) l=500n as=468.75f ad=375f \
+        ps=2.3125u pd=1.85u m=(1)*(8)
+PM0 (0 In Out vdd!) pmos1 w=(4u) l=180n as=1.5p ad=1.2p ps=5.75u pd=4.6u \
+        m=(1)*(8)
+V2 (net3 0) vsource dc=1 type=dc
+V1 (vdd! 0) vsource dc=1.8 type=dc
+C0 (Out 0) capacitor c=200f
+I10 (0 net015) isource mag=1 type=sine
+simulatorOptions options psfversion="1.1.0" reltol=1e-3 vabstol=1e-6 \
+    iabstol=1e-12 temp=27 tnom=27 scalem=1.0 scale=1.0 gmin=1e-12 rforce=1 \
+    maxnotes=5 maxwarns=5 digits=5 cols=80 pivrel=1e-3 \
+    sensfile="../psf/sens.output" checklimitdest=psf 
+tran tran stop=50u errpreset=conservative write="spectre.ic" \
+    writefinal="spectre.fc" annotate=status maxiters=5 
+finalTimeOP info what=oppoint where=rawfile
+modelParameter info what=models where=rawfile
+element info what=inst where=rawfile
+outputParameter info what=output where=rawfile
+designParamVals info what=parameters where=rawfile
+primitives info what=primitives where=rawfile
+subckts info what=subckts where=rawfile
+saveOptions options save=allpub

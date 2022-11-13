@@ -1,0 +1,6 @@
+Spectre (R) Circuit Simulator
+Version 19.1.0.063 64bit -- 10 Aug 2019
+Simulating `input.scs' on Eta at 1:24:46 PM, Mon Oct 31, 2022 (process id: 30994).
+H = mpsImport( "spectre" "ipi" "v0.0" ?session "spectre0_22886_3" )
+H->sclSetResultDir( "../psf" )
+H->sclRun( "all" )

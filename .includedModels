@@ -1,0 +1,2 @@
+simulator lang=spectre
+include "pmos1.scs"

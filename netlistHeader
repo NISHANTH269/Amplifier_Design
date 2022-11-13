@@ -1,0 +1,7 @@
+// Generated for: spectre
+// Generated on: Oct 31 13:18:38 2022
+// Design library name: Second
+// Design cell name: CommonDrain
+// Design view name: schematic
+simulator lang=spectre
+global 0 vdd!
