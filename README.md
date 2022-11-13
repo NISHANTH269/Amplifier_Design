@@ -1,0 +1,2 @@
+# Amplifier_Designv - Common Drain
+Goal is to design a common-drain amplifier. To compute various analysis for common-drain with current source load (M2) using PMOS transistors and to select the parameters to get a gain that is close to 0dB. As well as to identify and plot curves for both the amplifiers and record the output with the output load of CL=0.2pf and the body of M1 & M2 are both connected to VDD.
